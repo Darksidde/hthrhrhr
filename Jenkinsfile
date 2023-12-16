@@ -1,8 +1,12 @@
 pipeline {
     agent any
 
-    stages {
+    // Maven Tool'u yapılandırması
+    tools {
+        maven 'Maven' // Yukarıda belirttiğiniz Maven yükleme adını buraya yazın
+    }
 
+    stages {
         stage('Build') {
             steps {
                 // Maven'ı çağırarak proje derleme işlemi
