@@ -17,6 +17,15 @@ pipeline {
             }
         }
         // Diğer aşamaları buraya ekleyebilirsiniz: test, dağıtım, vs.
+     stage('Generate Reports') {
+            steps {
+                script {
+                    def mvnHome = tool name: 'Maven', type: 'maven'
+                    sh "${mvnHome}/bin/mvn surefire-report:report" // Surefire raporlarını oluşturmak için Maven komutu
+                    sh "${mvnHome}/bin/mvn site" // Cucumber raporlarını oluşturmak için Maven komutu
+                }
+            }
+        }
     }
     // Post veya diğer seçenekleri de burada ekleyebilirsiniz.
 }
