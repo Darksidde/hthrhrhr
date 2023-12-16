@@ -7,34 +7,28 @@
     <name>Archetype - Selenium</name>
     <url>http://maven.apache.org</url>
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
-
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <!-- Diğer bağımlılıklar -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.15.0</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>4.15.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -42,43 +36,26 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.8.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>3.2.0</version>
+            <version>2.6.4</version>
             <scope>test</scope>
-
         </dependency>
-
-
-
-
+        <!-- ... Diğer bağımlılıklar ... -->
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.4</version> <!-- Kullandığınız Spring Boot sürümüne göre versiyonu güncelleyin -->
+            </plugin>
+            <!-- ... Diğer pluginler ... -->
+        </plugins>
+        <finalName>testt-javapipe</finalName>
+    </build>
 
-        <!-- ... Diğer proje bilgileri ... -->
-
-        <build>
-            <plugins>
-                <!-- Spring Boot Maven Plugin ekleme -->
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>2.6.4</version> <!-- Kullandığınız Spring Boot sürümüne göre versiyonu güncelleyin -->
-                </plugin>
-                <!-- ... Diğer pluginler ... -->
-            </plugins>
-            <finalName>testt-javapipe</finalName>
-        </build>
-
-        <!-- ... Diğer proje ayarları ... -->
-
-
-
+    <!-- ... Diğer proje ayarları ... -->
 </project>
