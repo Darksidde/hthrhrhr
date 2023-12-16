@@ -1,10 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        // Maven aracını tanımla
+        maven 'Maven' // 'Maven' burada tanımlı Maven aracının adıdır, Jenkins arayüzünde belirtilen isimle aynı olmalıdır
+    }
+
     stages {
         stage('Build') {
             steps {
-                // Maven'ı çağırarak proje derleme işlemi
+                // Tanımlanan Maven aracını çağırarak proje derleme işlemi
                 script {
                     def mvnHome = tool name: 'Maven', type: 'maven'
                     sh "${mvnHome}/bin/mvn clean install" // Maven'in doğru sürümünü belirtin
